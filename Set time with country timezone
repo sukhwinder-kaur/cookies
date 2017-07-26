@@ -1,0 +1,22 @@
+   private void setTimeZoneAccordigToCountry() {
+        //------------------------------getDefault time zone id----------------------//
+        TimeZone tz = TimeZone.getDefault();
+        log("TimeZone   " + tz.getDisplayName(false, TimeZone.SHORT) + " Timezon id :: " + tz.getID());
+
+        ////--------------------------convert string date into Date-------------///
+        Date date1 = null;
+        String strDate = "2017-07-26T11:07:00-0700";
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
+        try {
+            date1 = dateFormat.parse(strDate);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        System.out.println(date1);
+
+        //--------------format the date into current timezone of device-----------///
+        dateFormat.setTimeZone(TimeZone.getTimeZone(tz.getID()));
+        log(dateFormat.format(date1));
+
+
+    }
