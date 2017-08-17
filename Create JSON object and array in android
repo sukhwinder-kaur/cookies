@@ -1,0 +1,15 @@
+///Create Json Object
+ JSONObject jsonObject = new JSONObject();
+ try{
+ //put value into json object
+ jsonObject.put("id", "1");
+ jsonObject.put("user_name","Simmy");
+ }catch(Exception e){
+ }
+ 
+ 
+ ---------------------------------------------------------------------------
+ ///Create Json Array
+ JSONArray jsonArray=new JSONArray();
+ //put full jsonobject into jsonarray
+  jsonArray.put(jsonObject);
